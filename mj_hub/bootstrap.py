@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 # License: GPL v3
 # Copyright: 2026- Mateusz Jamróz
-# MJHub/bootstrap.py
+# mj_hub/bootstrap.py
 
-from MJHub.platform.os_platform import get_platform
-from MJHub.platform.platform_info import paltform_info
-from MJHub.launcher.launcher import LauncherWindow
+from mj_hub.platform.os_platform import get_platform
+from mj_hub.platform.platform_info import paltform_info
+from mj_hub.launcher.launcher import LauncherWindow
 
 def start_app():
     platform = get_platform()
@@ -17,6 +17,7 @@ def start_app():
 
     def main_app():
         launcher.close()
+        print(">>>DEBUG: Closing launcher and starting main application.")
 
         # main_window = MainWindow()
         # main_window.show()

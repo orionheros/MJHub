@@ -2,16 +2,16 @@
 # -*- coding: utf-8 -*-
 # License: GPL v3
 # Copyright: 2026- Mateusz Jamróz
-# MJHub/mj_hub.py
+# mj_hub/mjhub.py
 
 import sys
-from PyQt5.QtWidgets import QApplication
-from MJHub.bootstrap import start_app
+from PyQt6.QtWidgets import QApplication
+from mj_hub.bootstrap import start_app
 
 def main():
     try:
         app = QApplication(sys.argv)
-        _launcher, _worker = start_app()
+        _launcher = start_app()
         print(">>>DEBUG: MJHub application started.")
     except Exception as e:
         print(f"Error starting MJHub: {e}")
