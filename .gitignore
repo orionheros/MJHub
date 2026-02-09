@@ -1,0 +1,36 @@
+# Created by author; see https://docs.python.org/3/library/venv.html
+
+# Python
+/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environments
+/venv/
+/.venv/
+
+VSCode
+.vscode/
+.vscode/*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment Variables
+.env
+.venv.env
+*.env
+
+# Build files
+build/
+dist/
+AppDir/
+*.AppImage
+*.deb
+*.rpm
+*.tar.gz
+*.zip
+*.exe
+*.msi
