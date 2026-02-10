@@ -11,8 +11,10 @@ from mj_hub.bootstrap import start_app
 def main():
     try:
         app = QApplication(sys.argv)
-        _launcher = start_app()
+        _worker, _launcher = start_app()
         print(">>>DEBUG: MJHub application started.")
+
+        sys.exit(app.exec())
     except Exception as e:
         print(f"Error starting MJHub: {e}")
 

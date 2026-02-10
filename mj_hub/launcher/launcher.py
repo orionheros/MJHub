@@ -12,11 +12,18 @@ from PyQt6.QtWidgets import (
                             )   
 from PyQt6.QtCore import Qt
 
+from mj_hub.ui.center_on_scr import CenterOnScreenWidget
+
 class LauncherWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint)
         self.setFixedSize(400, 200)
+
+        CenterOnScreenWidget.center_on_screen(self)
+        self.init_ui()
+
+    def init_ui(self):
 
         layout = QVBoxLayout()
 
