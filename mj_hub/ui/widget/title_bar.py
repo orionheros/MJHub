@@ -7,11 +7,13 @@
 import sys
 
 from PyQt6.QtWidgets import QWidget, QHBoxLayout, QLabel
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import Qt, pyqtSignal as Signal
 from PyQt6.QtGui import QPainter
 from PyQt6.QtWidgets import QStyleOption, QStyle
 
 class TitleBar(QWidget):
+    exit_requested = Signal()
+
     def __init__(self, parent):
         super().__init__(parent)
         self.setFixedHeight(30)
@@ -29,8 +31,8 @@ class TitleBar(QWidget):
         layout.addWidget(self.title_label)
         layout.addStretch()
 
-        x_button = QLabel("X")
-        x_button.setStyleSheet("""\
+        self.x_button = QLabel("X")
+        self.x_button.setStyleSheet("""\
         QLabel {
             font-size: 14px; 
             font-weight: bold; 
@@ -42,10 +44,10 @@ class TitleBar(QWidget):
             color: white;            
             }
         """)
-        x_button.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        x_button.setFixedSize(20, 20)
-        x_button.mousePressEvent = lambda event: sys.exit(0)
-        layout.addWidget(x_button)
+        self.x_button.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.x_button.setFixedSize(20, 20)
+        self.x_button.mousePressEvent = lambda event: self.exit_requested.emit()
+        layout.addWidget(self.x_button)
 
         self.setLayout(layout)
 

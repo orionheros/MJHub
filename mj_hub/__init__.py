@@ -3,7 +3,7 @@
 # License: GPL v3
 # Copyright: 2026- Mateusz Jamróz
 
-__version__ = '0.0.1'
+__version__ = '0.0.4'
 __app_name__ = 'mj_hub'
 __author__ = 'Mateusz Jamróz'
 __license__ = 'GPL v3'
